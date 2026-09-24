@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/msshabreena-coder/Jenkins-Q6.git'
+                git branch: 'main',
+                    url: 'https://github.com/msshabreena-coder/Jenkins-Q6.git'
             }
         }
 
@@ -27,7 +28,7 @@ pipeline {
         stage('Archive Reports') {
             steps {
                 archiveArtifacts artifacts: 'frontend_report.txt,backend_report.txt',
-                             allowEmptyArchive: false
+                                 allowEmptyArchive: false
             }
         }
     }
